@@ -60,10 +60,20 @@ const Registro = () => {
             tipo.type = "password";
         }
     }
-    return(
 
-        <Card style={{ width: '18rem' }} className="container card_register">
+    const cancelar = async ()  => {
+        window.location= "/login"
+    }
+
+    return(
+        <div className="bodyLogin">
+        <Card style={{ width: '18rem' }} className="container card_register, Register">
             <Card.Body>
+                <div>
+                    <h1 className="letras">
+                        Registrarse
+                    </h1>
+                </div>
 
                 <div className="form-group ">
                     <label htmlFor="exampleDropdownFormPassword1">Username</label>
@@ -99,11 +109,13 @@ const Registro = () => {
                     <input type="text" className="form-control input_login" name="last_name" placeholder="last_name" onChange={handleChange}  />
                 </div>
 
-                <button type="submit" onClick = {()=> pot(datos)} className="btn btn-primary input_sub">Registrarse</button>
+                <button type="submit" onClick = {()=> pot(datos)} className="btn btn-primary input_sub, linea">Registrarse</button>
+                <button type="submit" onClick = {()=> cancelar()} className="btn btn-primary input_sub, linea">Cancelar</button>
 
                 <div className="dropdown-divider"></div>
             </Card.Body>
         </Card>
+        </div>
     )
 }
 

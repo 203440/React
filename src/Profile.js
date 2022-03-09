@@ -8,7 +8,7 @@ import xd from "./xd.jpg"
 const urlGet = "http://localhost:8000/api/v1/profile/"+window.localStorage.getItem('id')
 
 const urlPut = "http://localhost:8000/api/v1/profile/"+window.localStorage.getItem('id')
-const urlPut2 = "http://localhost:8000/api/v2/profile/"+window.localStorage.getItem('id')
+//const urlPut2 = "http://localhost:8000/api/v2/profile/"+window.localStorage.getItem('id')
 
 const Profile = () => {
     const [datos,setDatos] = useState({})
@@ -36,15 +36,15 @@ const Profile = () => {
 
         if(form == null){
             newF.append("username", datos.username);
-            newF.append("last_name", datos.last_name);
             newF.append("first_name", datos.first_name);
+            newF.append("last_name", datos.last_name);
             newF.append("email", datos.email);
 
             putm(newF)
         }else{
             form.append("username", datos.username);
-            form.append("last_name", datos.last_name);
             form.append("first_name", datos.first_name);
+            form.append("last_name", datos.last_name);
             form.append("email", datos.email);
             putm(form)
         }
@@ -81,9 +81,20 @@ const Profile = () => {
         setForm(formData)
     }
 
+    const cerrar = async ()  => {
+        window.location= "/login"
+    }
+
     return(
         <div className="centrar">
-            <Card style={{ width: '60rem' , height:' 30rem', top:'40px'}} className="container card_profile">
+            <div className="Perfil">
+            <Card style={{ width: '60rem' , height:' 30rem', top:'40px'}} className="container card_profile, Per">
+                <div>
+                    <h1 className="letras">
+                        Perfil
+                    </h1>
+
+                </div>
                 <div className="centrar">
                     <img src={datos.img_profile != null ? datos.img_profile : xd} className="imagen"/>
                 </div>
@@ -103,9 +114,12 @@ const Profile = () => {
                 <div className="actuali">
                     <button onClick={()=> pot2()}>Actualizar</button>
                 </div>
-
+                <div>
+                    <button type="submit" onClick = {()=> cerrar()} className="btn btn-primary input_sub">Cerrar Sesion</button>
+                </div>
 
             </Card>
+            </div>
         </div>
 
     )

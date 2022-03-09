@@ -83,3 +83,34 @@ body{
   padding: 2px 10px;
   background-color: #dadada;
 }
+.Login{
+  background: linear-gradient(70deg, rgb(176, 72, 96) 50%, rgb(210, 89, 24) 100%);
+  background: rgb(155, 60, 232);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,58,1) 48%, rgb(10, 49, 122) 100%);
+}
+
+.bodyLogin{
+  background-image: url("body.jpg");
+  width: auto;
+  height: 750px;
+}
+.letras{
+  font-family: 'Script MT Bold', cursive;
+  color: #ffffff;
+
+}
+.Register{
+  background-color: burlywood;
+}
+.Perfil{
+  background-image: url("Fondo2.jpg");
+  width: auto;
+  height: 750px;
+}
+.Per{
+  background: linear-gradient(90deg, rgb(79, 164, 139) 0%, rgb(188, 92, 238) 48%, rgb(85, 143, 252) 100%);
+}
+.linea
+{
+  display: inline-block;
+}

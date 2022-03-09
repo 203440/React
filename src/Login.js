@@ -53,29 +53,34 @@ const Login = () => {
 
 
     return(
-
-
-        <Card style={{ width: '18rem' }} className="container lol">
-            <Card.Body>
-
-                <div className="form-group ">
-                    <label htmlFor="exampleDropdownFormPassword1">Username</label>
-                    <input type="text" className="form-control input_login" name="username" placeholder="username" onChange={handleChange} />
+        <div className="bodyLogin">
+            <Card style={{ width: '18rem', top:'200px'}} className="container lol, Login" >
+                <div className="centrar" >
+                    <h1 className="letras">
+                        Login
+                    </h1>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="exampleDropdownFormPassword1">Password</label>
-                    <input type="password" className="form-control input_login" name="password" placeholder="password" id="password" onChange={handleChange}  />
-                    <div className="input-group-append">
-                        <button id="show_password" className="btn btn-primary" type="button"
-                                onClick={mostrarContrasena}><span className="fa fa-eye-slash icon"></span> Mostrar</button>
+
+                <Card.Body >
+                    <div className="form-group ">
+                        <label htmlFor="exampleDropdownFormPassword1" style={{color:'#ffffff'}}>Username</label>
+                        <input className="input" type="text" className="form-control input_login" name="username" placeholder="username" onChange={handleChange} />
                     </div>
-                </div>
-                <button type="submit" onClick = {()=> pot(datos)} className="btn btn-primary input_sub">Iniciar sesion</button>
+                    <br/>
+                    <div className="form-group">
+                       <label htmlFor="exampleDropdownFormPassword1" style={{color:'#ffffff'}}>Password</label>
+                       <input className="input" type="password" className="form-control input_login" name="password" placeholder="password" id="password" onChange={handleChange}  />
+                       <div className="input-group-append">
+                         <button id="show_password" className="btn btn-primary" type="button" onClick={mostrarContrasena}><span className="fa fa-eye-slash icon"></span> Mostrar</button>
+                       </div>
+                    </div>
+                    <button type="submit" onClick = {()=> pot(datos)} className="btn btn-primary input_sub">Iniciar sesion</button>
 
                 <div className="dropdown-divider"></div>
                 <Link  className="input_new"  to="/register">Registrarse</Link>
             </Card.Body>
         </Card>
+        </div>
 
     )
 }
