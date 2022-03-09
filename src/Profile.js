@@ -86,18 +86,17 @@ const Profile = () => {
     return(
         <div className="centrar">
             <div className="Perfil">
-            <Card style={{ width: '60rem' , height:' 30rem', top:'40px'}} className="container card_profile, Per">
+            <Card style={{ width: '40rem' , height:' 35rem', top:'80px'}} className="container card_profile, Per">
                 <div>
                     <h1 className="letras">
                         Perfil
                     </h1>
-
                 </div>
                 <div className="centrar">
                     <img src={datos.img_profile != null ? datos.img_profile : xd} className="imagen"/>
                 </div>
-
                 <div className="user_last">
+                    <br/>
                     <input  type= "text"  name="username" placeholder="user" onChange={handleChange} value={datos.username} />
                     <input  type= "text"  name="last_name" placeholder="Apellido P" onChange={handleChange} value={datos.last_name} />
                 </div>
@@ -106,9 +105,11 @@ const Profile = () => {
                     <input  type= "text"  name="email" placeholder="Correo" onChange={handleChange} value={datos.email} />
                 </div>
                 <div className="fil">
+                    <br/>
                     <input  type= "file"  name="img_profile" onChange={handleChangeF}  id={"inputF"}/>
                 </div>
                 <div className="actuali">
+                    <br/>
                     <button onClick={()=> pot2()}>Actualizar</button>
                 </div>
                 <div>
