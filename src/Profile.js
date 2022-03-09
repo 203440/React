@@ -1,14 +1,12 @@
 import {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
-import {Card} from "react-bootstrap";
 import axios from "axios";
 import xd from "./xd.jpg"
+import {Card} from "react-bootstrap";
 
 const urlGet = "http://localhost:8000/api/v1/profile/"+window.localStorage.getItem('id')
-
 const urlPut = "http://localhost:8000/api/v1/profile/"+window.localStorage.getItem('id')
-//const urlPut2 = "http://localhost:8000/api/v2/profile/"+window.localStorage.getItem('id')
 
 const Profile = () => {
     const [datos,setDatos] = useState({})
@@ -59,12 +57,12 @@ const Profile = () => {
                 'Authorization': 'token '+window.localStorage.getItem('token')
             },
             data: dat,
-        }).then((res) => {alert("Datos actualizados", limpiarInputfile(),get())
+        }).then((res) => {alert("Actualizacion con exito", limpiar(),get())
         }).catch((err) => {  alert(err.error)});
 
     }
 
-    function limpiarInputfile() {
+    function limpiar() {
         document.getElementById("inputF").value ='';
         setForm(null)
     }
@@ -98,9 +96,7 @@ const Profile = () => {
                 <div className="centrar">
                     <img src={datos.img_profile != null ? datos.img_profile : xd} className="imagen"/>
                 </div>
-                <div className="fil">
-                    <input  type= "file"  name="img_profile" onChange={handleChangeF}  id={"inputF"}/>
-                </div>
+
                 <div className="user_last">
                     <input  type= "text"  name="username" placeholder="user" onChange={handleChange} value={datos.username} />
                     <input  type= "text"  name="last_name" placeholder="Apellido P" onChange={handleChange} value={datos.last_name} />
@@ -109,8 +105,9 @@ const Profile = () => {
                     <input  type= "text"  name="first_name" placeholder="Apellido M" onChange={handleChange} value={datos.first_name} />
                     <input  type= "text"  name="email" placeholder="Correo" onChange={handleChange} value={datos.email} />
                 </div>
-
-
+                <div className="fil">
+                    <input  type= "file"  name="img_profile" onChange={handleChangeF}  id={"inputF"}/>
+                </div>
                 <div className="actuali">
                     <button onClick={()=> pot2()}>Actualizar</button>
                 </div>
