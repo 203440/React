@@ -2,7 +2,6 @@ import {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
 import axios from "axios";
-import xd from "./xd.jpg"
 import {Card} from "react-bootstrap";
 
 const urlGet = "http://localhost:8000/api/v1/profile/"+window.localStorage.getItem('id')
@@ -93,7 +92,7 @@ const Profile = () => {
                     </h1>
                 </div>
                 <div className="centrar">
-                    <img src={datos.img_profile != null ? datos.img_profile : xd} className="imagen"/>
+                    <img src={datos.img_profile != null ? datos.img_profile :""} className="imagen"/>
                 </div>
                 <div className="user_last">
                     <br/>
